@@ -11,6 +11,7 @@ export default ({ data }) => (
       <HelmetDatoCms seo={data.datoCmsWork.seoMetaTags} />
       <div className="sheet__inner">
         <h1 className="sheet__title">{data.datoCmsWork.title}</h1>
+        <p className="sheet__lead">{data.datoCmsWork.excerpt}</p>
         <div className="sheet__slider">
           <Slider infinite={true} slidesToShow={2} arrows>
             {data.datoCmsWork.gallery.map(({ fluid }) => (
@@ -39,6 +40,7 @@ export const query = graphql`
         ...GatsbyDatoCmsSeoMetaTags
       }
       title
+      excerpt
       gallery {
         fluid(maxWidth: 200, imgixParams: { fm: "jpg", auto: "compress" }) {
           src
