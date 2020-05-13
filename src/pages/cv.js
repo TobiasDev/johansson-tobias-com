@@ -29,7 +29,7 @@ export default CV
 
 export const query = graphql`
   query CvQuery {
-    cv: datoCmsCvPage {
+    cv: datoCmsCv {
       seoMetaTags {
         ...GatsbyDatoCmsSeoMetaTags
       }
